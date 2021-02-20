@@ -1,5 +1,5 @@
 # Xdoc
-Automatically generate MarkDown tools for API
+Automatically generate MarkDown  for API
 
   this plugin is base on IntelliJ PSI,The Program Structure Interface, the layer
   in the IntelliJ Platform
