@@ -9,8 +9,8 @@ Automatically generate MarkDown tools for API
  
   The main content of the API　Document comes from class  file's  Javadoc comments
   and SpringAnnotation
-  for a method description, it comes from PsiDocComment object
-  for a method param's description .it comes from  docTags @Param
+ eg： for a method description, it comes from PsiDocComment object
+  for a method param's description .it comes from  docTags @Param object
  
   An entire class parsing process is done from top to bottom, one line after another,
   one character after another, its necessary to use many for loops
