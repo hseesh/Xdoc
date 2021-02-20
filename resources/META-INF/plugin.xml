@@ -1,0 +1,74 @@
+<idea-plugin>
+    <id>com.yatoufang.hse.Xdoc</id>
+    <name>Xdoc</name>
+    <version>1.01</version>
+    <vendor email="gong-huang@qq.com" url="https://github.com/hseesh">gonghuang</vendor>
+
+    <description><![CDATA[
+    <p><b>Automatically generate MarkDown tools for API</b></p>
+    <br/>
+    <p>
+        <b>
+            <a href="https://github.com/YiiGuxing/TranslationPlugin">GitHub</a> |
+            <a href="https://github.com/YiiGuxing/TranslationPlugin/issues">Issues</a> |
+        </b>
+    </p>
+    <br/>
+    <p><b>how to use :</b>
+    <ul>
+        <li>Generate interface documentation for a class file
+            <ul>
+                <li>selected file-> right-click -> new -> Api Document</li>
+                <li>or use keyboard shortcuts alt + G</li>
+            </ul>
+        </li>
+        <li>Generate interface documentation for a specify method
+            <ul>
+                <li>select method's name right-click -> Api Document</li>
+                <li>or use keyboard shortcuts alt + G</li>
+            </ul>
+        </li>
+        <li>Custom Your MarkDown Template
+            <ul>
+               <li>File -> setting -> tools -> Document Generator Settings</li>
+            </ul>
+        </li>
+    </ul>
+    </p>
+    <br/>
+    <p>
+    ]]></description>
+
+    <change-notes>
+    </change-notes>
+
+
+    <idea-version since-build="173.0"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends config-file="depends.xml" optional="true">com.intellij.java</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable displayName="Document Generator Settings"
+                                 id="com.yatoufang.config.AppSettingsConfigurable"
+                                 instance="com.yatoufang.config.AppSettingsConfigurable" parentId="tools"/>
+        <applicationService serviceImplementation="com.yatoufang.config.AppSettingsState"/>
+    </extensions>
+
+    <actions>
+        <action id="com.yatoufang.class_api_generator" class="com.yatoufang.ClassNavigatingAction" text="API Document"
+                description="GeneratorDocument" icon="/icons/icon.svg">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt A"/>
+            <add-to-group group-id="NewGroup" anchor="last"/>
+
+        </action>
+        <action id="com.yatoufang.method_api_generator" class="com.yatoufang.MethodNavigatingAction"
+                text="Api Document">
+            <add-to-group group-id="EditorPopupMenu" anchor="before" relative-to-action="$Cut"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt G"/>
+        </action>
+        
+    </actions>
+
+</idea-plugin>
